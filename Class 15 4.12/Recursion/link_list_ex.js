@@ -28,5 +28,3 @@ practice.iterateLinkedListIteratively = function(node, largest=0) {
   largest = node.value > largest ? node.value : largest;
   return practice.iterateLinkedListIteratively(node.next, largest);
 }
-
-
