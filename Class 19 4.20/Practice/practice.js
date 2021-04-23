@@ -56,7 +56,7 @@ practice.iterateQueueIteratively = function (queue) {
   let big = queue.peek();
   while (queue.peek()) {
     let currentItem = queue.dequeue();
-    if (currenItem > big) {
+    if (currentItem > big) {
       big = currentItem;
     }
   }
