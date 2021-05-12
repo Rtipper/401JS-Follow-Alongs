@@ -100,7 +100,7 @@ practice.contains = function(tree, value) {
 practice.preOrderTraversal = function (node, values) {
   value.push(node.value);
   if(node.left) {practice.preOrderTraversal(node.left, values)}
-  if(node.right) {practice.preOrderTraversal(node.right, values)}
+  if(node.right) {practice.preOrderTraversal(node.right, vlaues)}
   return values;
 }
 
