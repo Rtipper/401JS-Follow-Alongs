@@ -1,0 +1,24 @@
+ul {
+  margin-top: -65px;
+  list-style-type: none;
+}
+
+li {
+  padding: 10px;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color: red;
+}

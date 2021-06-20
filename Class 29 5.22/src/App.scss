@@ -1,0 +1,29 @@
+body {
+  font-size: 20px;
+}
+
+div {
+  margin: 2rem;
+}
+
+label {
+  margin: 1rem;
+}
+
+#searchbox {
+  margin-top: 3rem;
+}
+
+input[type='radio'], input[type='checkbox'] {
+  display: none;
+}
+
+label span {
+  border: 1px solid rgb(0, 132, 255);
+  padding: .50rem;
+  margin: 1px;
+}
+
+input[type="radio"]:checked + span {
+  background: rgb(131, 210, 255);
+}
