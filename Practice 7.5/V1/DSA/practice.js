@@ -21,7 +21,7 @@ practice.iterateLinkedListIteratively = function (list) {
 }
 
 practice.iterateLinkedListRecursively = function (node, largest = 0) {
-  if(!node) { return largest; }
+  if(!node){ return largest; }
   largest = node.value > largest ? node.value : largest;
   return practice.iterateLinkedListRecursively(node, largest);
 }
@@ -34,16 +34,15 @@ practice.iterateStackIteratively = function (stack) {
   let big = stack.peek();
   while(stack.peek()) {
     let currentItem = stack.pop();
-    if (currentItem > big) {
+    if(currentItem > big) {
       big = currentItem;
     }
   }
   return big;
-
 }
 
 practice.iterateStackRecursively = function (stack, largest = 0) {
-  if(!stack.peek()) { return largest; }
+  if(!stack.peek()){ return largest; }
   let current = stack.pop();
   largest = current > largest ? current : largest;
   return practice.iterateStackRecursively(stack, largest);
@@ -54,7 +53,7 @@ practice.iterateStackRecursively = function (stack, largest = 0) {
 // Queue Contains: (1->5->12->9)
 practice.iterateQueueIteratively = function (queue) {
   let big = queue.peek();
-  while (queue.peek()) {
+  while(queue.peek()) {
     let currentItem = queue.dequeue();
     if (currentItem > big) {
     }
@@ -65,7 +64,7 @@ practice.iterateQueueIteratively = function (queue) {
 practice.iterateQueueRecursively = function (queue, largest = 0) {
   if(!queue.peek()) { return largest; }
   let current = queue.dequeue();
-  largest = current > largest ? current: length;
+  largest = current > largest ? current : length;
   return practice.iterateQueueRecursively(queue, largest);
 }
 
@@ -78,11 +77,11 @@ practice.iterateQueueRecursively = function (queue, largest = 0) {
 // Inbound arguments are the tree and the value to look for
 practice.contains = function(tree, value) {
   let current = tree.root;
-  while (current) {
-    if (value === current.value) {
+  while(current) {
+    if(value === current.value) {
       return true;
     }
-    if (value > current.value) {
+    if (value > current.right) {
       current = current.right
     } else {
       current = current.left;
@@ -104,26 +103,27 @@ practice.preOrderTraversal = function (node, values) {
 
 // Inbound argument is the tree root and an empty array
 practice.inOrderTraversal = function (node, values) {
- if(node.left){practice.inOrderTraversal}(node.left, values);
+ if(node.left){practice.inOrderTraversal(node.left, values)}
  values.push(node.value);
- if(node.right){practice.inOrderTraversal(node.right, values)};
+ if(node.right){practice.inOrderTraversal(node.right, values)}
  return values;
 }
 
 // Inbound argument is the tree root and an empty array
 practice.postOrderTraversal = function (node, values) {
-if(node.left){practice.postOrderTraversal(node.left, values)}
-if(node.right){practice.postOrderTraversal(node.right, values)}
-values.push(node.value);
-return values;
+  if(node.left){practice.postOrderTraversal(node.left, values)}
+  if(node.right){practice.postOrderTraversal(node.right, values)}
+  values.push(node.value);
+  return values;
 }
 
 // Inbound argument is the tree
 practice.breadthFirstTraversal = function (tree) {
   let values = []
   let queue = [];
+
   queue.push(tree.root);
-  while (queue) {
+  while(queue) {
     let currentNode = queue.shift()
     values.push(currentNode.value)
     if(currentNode.left){queue.push(currentNode.left)}
